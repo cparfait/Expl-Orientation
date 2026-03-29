@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="fr" class="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Expl'Orientation - Ton Orientation</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4647d3",
+                        "primary-container": "#9396ff",
+                        "secondary": "#00675d",
+                        "secondary-container": "#6df5e1",
+                        "tertiary": "#815100",
+                        "surface": "#faf4ff",
+                        "on-surface": "#302950",
+                        "on-surface-variant": "#5e5680",
+                        "surface-container": "#ece4ff",
+                        "surface-container-low": "#f4eeff",
+                        "surface-container-high": "#e6deff",
+                        "surface-container-highest": "#e1d8ff",
+                        "outline-variant": "#b0a7d6",
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Be Vietnam Pro"],
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .nebula-bg { background: radial-gradient(circle at 0% 0%, #ece4ff 0%, #faf4ff 100%); }
+        .confetti-pattern { background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l4 4m10 10l4 4M20 0l-4 4m-10 10l-4 4' stroke='%234647d3' stroke-opacity='0.05' fill='none'/%3E%3C/svg%3E"); }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-background min-h-screen nebula-bg confetti-pattern">
+
+    <nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/20">
+        <div class="flex items-center gap-2 max-w-7xl mx-auto w-full">
+            <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+            <span class="text-xl font-bold text-indigo-900 font-headline tracking-tight">Expl'Orientation</span>
+        </div>
+    </nav>
+
+    <main id="screen-intro" class="pt-28 pb-32 px-6 w-full flex flex-col items-center">
+        <section class="relative mb-16 flex flex-col items-center text-center max-w-3xl w-full">
+            <h1 class="font-headline text-5xl md:text-6xl lg:text-7xl font-extrabold text-on-background tracking-tight mb-6 leading-tight">
+                Ton Voyage <br/> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">d'Orientation</span>
+            </h1>
+            <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
+                Prêt à explorer les étoiles de ton avenir ? Utilise la méthode <span class="font-bold text-primary">RIASEC</span> comme une boussole céleste pour découvrir les galaxies de métiers qui te correspondent.
+            </p>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 w-full max-w-5xl mb-16">
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">🛠️</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Réaliste</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Tu aimes agir, bricoler et travailler avec tes mains ou des machines concrètes.</p>
+            </div>
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">🔬</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Investigateur</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Observer, apprendre, résoudre des problèmes et comprendre comment le monde fonctionne.</p>
+            </div>
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">🎨</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Artistique</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Créatif et imaginatif, tu aimes t'exprimer sans forcément suivre de règles strictes.</p>
+            </div>
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">🤝</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Social</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Aider, soigner, enseigner et être en contact permanent avec les autres.</p>
+            </div>
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">🚀</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Entreprenant</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Tu aimes diriger, convaincre, relever des défis et mener des projets à bien.</p>
+            </div>
+            <div class="p-8 bg-surface-container-low hover:bg-surface-container-highest transition-all duration-300 rounded-2xl border border-outline-variant/10 shadow-sm h-full flex flex-col">
+                <span class="text-4xl block mb-4">📋</span>
+                <h3 class="font-headline text-xl font-bold mb-2">Conventionnel</h3>
+                <p class="text-on-surface-variant text-sm flex-grow">Organisé et précis, tu apprécies les structures claires et les données bien rangées.</p>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-white rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_rgba(70,71,211,0.05)] border border-indigo-50 w-full max-w-4xl">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-secondary-container/30 text-secondary font-bold text-sm mb-6">
+                <span class="material-symbols-outlined text-lg">info</span>
+                Comment ça marche ?
+            </div>
+            <h3 class="font-headline text-2xl md:text-3xl font-extrabold text-on-background mb-8">Prépare ton décollage</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm mt-1">1</div>
+                    <p class="text-on-surface-variant text-base md:text-lg"><span class="font-bold text-on-background">30 activités à évaluer :</span> Dis-nous si tu aimes ou détestes chaque proposition.</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm mt-1">2</div>
+                    <p class="text-on-surface-variant text-base md:text-lg"><span class="font-bold text-on-background">Échelle de 1 à 5 :</span> De "Pas du tout pour moi" à "C'est ma passion !".</p>
+                </li>
+                <li class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm mt-1">3</div>
+                    <p class="text-on-surface-variant text-base md:text-lg"><span class="font-bold text-on-background">Pas de mauvaises réponses :</span> Ce n'est pas une interrogation notée. Sois juste toi-même, c'est ton voyage !</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="flex justify-center">
+            <button onclick="startApp()" class="px-10 py-5 md:px-12 md:py-6 bg-gradient-to-r from-primary to-primary-container text-white font-headline font-bold text-lg md:text-xl rounded-full shadow-xl hover:scale-105 transition-all flex items-center gap-3">
+                Lancer le Diagnostic <span class="material-symbols-outlined text-2xl">rocket</span>
+            </button>
+        </div>
+    </main>
+
+    <main id="screen-quiz" class="hidden pt-28 px-6 w-full min-h-[80vh] flex flex-col justify-center items-center pb-32">
+        <div class="w-full max-w-3xl mb-12">
+            <div class="flex justify-between items-end mb-4">
+                <span id="q-count" class="text-primary font-headline font-bold text-lg tracking-tight">Question 1 / 30</span>
+                <span id="q-percent" class="text-on-surface-variant font-medium text-sm">0% Complete</span>
+            </div>
+            <div class="relative h-4 w-full bg-surface-container rounded-full overflow-hidden">
+                <div id="progress-bar" class="absolute left-0 top-0 h-full bg-gradient-to-r from-primary to-primary-container rounded-full transition-all duration-300" style="width: 0%"></div>
+            </div>
+        </div>
+
+        <section class="w-full max-w-3xl bg-white/90 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-[0_20px_50px_rgba(48,41,80,0.04)] border border-outline-variant/10">
+            <h2 id="q-text" class="text-2xl md:text-3xl lg:text-4xl font-headline font-extrabold text-on-background text-center md:text-left mb-12 leading-tight min-h-[100px] flex items-center">
+                Chargement de la question...
+            </h2>
+            
+            <div class="space-y-6">
+                <div class="flex justify-between items-center gap-3 md:gap-5">
+                    <button onclick="handleAnswer(1)" class="flex-1 py-5 md:py-8 rounded-xl bg-surface-container-high text-xl md:text-3xl font-headline font-bold text-primary hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-sm hover:shadow-md">1</button>
+                    <button onclick="handleAnswer(2)" class="flex-1 py-5 md:py-8 rounded-xl bg-surface-container-high text-xl md:text-3xl font-headline font-bold text-primary hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-sm hover:shadow-md">2</button>
+                    <button onclick="handleAnswer(3)" class="flex-1 py-5 md:py-8 rounded-xl bg-surface-container-high text-xl md:text-3xl font-headline font-bold text-primary hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-sm hover:shadow-md">3</button>
+                    <button onclick="handleAnswer(4)" class="flex-1 py-5 md:py-8 rounded-xl bg-surface-container-high text-xl md:text-3xl font-headline font-bold text-primary hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-sm hover:shadow-md">4</button>
+                    <button onclick="handleAnswer(5)" class="flex-1 py-5 md:py-8 rounded-xl bg-surface-container-high text-xl md:text-3xl font-headline font-bold text-primary hover:bg-primary hover:text-white transition-all transform active:scale-95 shadow-sm hover:shadow-md">5</button>
+                </div>
+                <div class="flex justify-between items-start px-2">
+                    <div class="w-24 text-left">
+                        <p class="text-[10px] md:text-xs font-headline font-extrabold tracking-widest text-outline uppercase leading-tight">PAS DU TOUT</p>
+                    </div>
+                    <div class="w-24 text-right">
+                        <p class="text-[10px] md:text-xs font-headline font-extrabold tracking-widest text-primary uppercase leading-tight">PASSIONNÉMENT</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main id="screen-results" class="hidden pt-28 px-6 w-full flex flex-col items-center pb-32">
+        <header class="mb-12 text-center w-full max-w-5xl">
+            <div class="inline-flex items-center justify-center gap-2 px-5 py-2 bg-secondary-container text-on-secondary-container rounded-full mb-6 shadow-sm">
+                <span class="material-symbols-outlined text-sm">stars</span>
+                <span class="text-xs md:text-sm font-bold font-headline tracking-widest uppercase">Analyse Terminée</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold font-headline text-on-surface tracking-tight leading-tight">
+                🎯 Tes Profils Dominants
+            </h1>
+            <p class="mt-6 text-on-surface-variant text-lg md:text-xl max-w-2xl mx-auto font-medium opacity-80 leading-relaxed">
+                Ta trajectoire céleste se précise. Voici les archétypes qui résonnent le plus avec ta personnalité.
+            </p>
+        </header>
+
+        <div id="results-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8 w-full max-w-6xl">
+            </div>
+
+        <div id="hybrid-container" class="w-full max-w-6xl mb-16 hidden">
+            </div>
+
+        <div class="flex flex-col items-center gap-6 mt-4">
+            <button onclick="location.reload()" class="px-8 py-4 rounded-full border-2 border-primary text-primary font-bold font-headline flex items-center gap-3 hover:bg-primary hover:text-white active:scale-95 transition-all">
+                <span class="material-symbols-outlined">refresh</span>
+                Refaire le test
+            </button>
+        </div>
+    </main>
+
+    <script>
+        let sourceMetiers = "En cours de chargement...";
+
+        const questions = [
+            {q: "Réparer un vélo, un meuble ou un appareil électronique.", c: "R"},
+            {q: "Chercher à comprendre comment fonctionne le cerveau humain.", c: "I"},
+            {q: "Réaliser un montage vidéo ou une création graphique.", c: "A"},
+            {q: "Expliquer les règles d'un jeu ou une leçon à un ami.", c: "S"},
+            {q: "Organiser une vente ou un projet pour récolter de l'argent.", c: "E"},
+            {q: "Ranger tes dossiers ou ton bureau de manière méthodique.", c: "C"},
+            {q: "Faire du sport intensif ou travailler physiquement dehors.", c: "R"},
+            {q: "Résoudre des énigmes complexes ou des exercices de logique.", c: "I"},
+            {q: "Inventer des histoires, des chansons ou des concepts originaux.", c: "A"},
+            {q: "Écouter et conseiller quelqu'un qui a des soucis.", c: "S"},
+            {q: "Prendre la parole en public pour défendre une idée.", c: "E"},
+            {q: "Tenir un budget précis de tes économies ou de tes dépenses.", c: "C"},
+            {q: "Travailler avec des outils précis (scie, soudure, cuisine).", c: "R"},
+            {q: "Apprendre de nouvelles choses sur les sciences ou l'espace.", c: "I"},
+            {q: "Décorer une pièce ou créer ton propre style vestimentaire.", c: "A"},
+            {q: "Participer à une mission d'aide humanitaire.", c: "S"},
+            {q: "Convaincre un groupe de te suivre dans une nouvelle aventure.", c: "E"},
+            {q: "Suivre un plan ou une notice de montage sans faire d'erreur.", c: "C"},
+            {q: "Piloter des engins de transport ou des drones.", c: "R"},
+            {q: "Passer du temps à analyser des données ou des faits.", c: "I"},
+            {q: "Jouer d'un instrument ou monter sur scène (théâtre, danse).", c: "A"},
+            {q: "Travailler en équipe pour le bien d'un groupe.", c: "S"},
+            {q: "Être le capitaine d'une équipe ou le délégué de classe.", c: "E"},
+            {q: "Vérifier que les informations sont exactes et bien classées.", c: "C"},
+            {q: "Cultiver des plantes ou s'occuper d'animaux de ferme.", c: "R"},
+            {q: "Lire des articles sur les découvertes technologiques.", c: "I"},
+            {q: "Photographier des paysages ou des scènes de vie.", c: "A"},
+            {q: "Accompagner des enfants ou des personnes âgées.", c: "S"},
+            {q: "Prendre des décisions rapides sous pression.", c: "E"},
+            {q: "Utiliser des logiciels pour organiser des stocks ou des listes.", c: "C"}
+        ];
+
+        const profiles = {
+            "R": {
+                n: "Réaliste (L'As de l'Action)", icon: "build", color: "primary",
+                sf: "<strong>Ce que tu aimes :</strong> Manipuler des outils, utiliser des machines, travailler en extérieur, construire ou faire des efforts physiques.<br><br><strong>Ton environnement idéal :</strong> Un cadre de travail concret, avec des règles claires, souvent sur le terrain.",
+                se: "<strong>Qui es-tu ?</strong> Tu es pragmatique et tu as besoin de voir le résultat concret de ton travail. Tu préfères largement l'action à la théorie.<br><br><strong>Tes grandes qualités :</strong> Débrouillardise, endurance, franchise, autonomie.",
+                j: [
+                    {n: "Ingénieur Mécanique", l: "https://www.onisep.fr/recherche?text=ing%C3%A9nieur%20m%C3%A9canique"},
+                    {n: "Paysagiste", l: "https://www.onisep.fr/recherche?text=paysagiste"},
+                    {n: "Pompier", l: "https://www.onisep.fr/recherche?text=sapeur%20pompier"},
+                    {n: "Charpentier", l: "https://www.onisep.fr/recherche?text=charpentier"}
+                ]
+            },
+            "I": {
+                n: "Investigateur (Le Chercheur)", icon: "biotech", color: "secondary",
+                sf: "<strong>Ce que tu aimes :</strong> Observer, évaluer, faire des recherches, manipuler des données ou des concepts scientifiques et apprendre en permanence.<br><br><strong>Ton environnement idéal :</strong> Un milieu intellectuellement stimulant où tu as le temps de réfléchir et de te concentrer.",
+                se: "<strong>Qui es-tu ?</strong> Tu es le « cerveau » curieux qui a toujours besoin de comprendre le pourquoi du comment et de résoudre des problèmes complexes.<br><br><strong>Tes grandes qualités :</strong> Curiosité, esprit critique, patience, persévérance et logique.",
+                j: [
+                    {n: "Médecin", l: "https://www.onisep.fr/recherche?text=m%C3%A9decin"},
+                    {n: "Développeur Web", l: "https://www.onisep.fr/recherche?text=d%C3%A9veloppeur"},
+                    {n: "Biologiste", l: "https://www.onisep.fr/recherche?text=biologiste"},
+                    {n: "Expert Cybersécurité", l: "https://www.onisep.fr/recherche?text=cybers%C3%A9curit%C3%A9"}
+                ]
+            },
+            "A": {
+                n: "Artistique (Le Créateur)", icon: "palette", color: "tertiary",
+                sf: "<strong>Ce que tu aimes :</strong> Créer, concevoir, imaginer des formes, des couleurs ou des sons. Tu aimes l'originalité et tout ce qui touche à l'esthétique.<br><br><strong>Ton environnement idéal :</strong> Un espace de travail libre, créatif, imprévisible et où l'indépendance est valorisée.",
+                se: "<strong>Qui es-tu ?</strong> Tu es guidé(e) par ton intuition et tes émotions. Tu as besoin d'exprimer ta singularité et tu fuis la routine comme la peste.<br><br><strong>Tes grandes qualités :</strong> Imagination, sensibilité, intuition, ouverture d'esprit et originalité.",
+                j: [
+                    {n: "Graphiste", l: "https://www.onisep.fr/recherche?text=graphiste"},
+                    {n: "Architecte", l: "https://www.onisep.fr/recherche?text=architecte"},
+                    {n: "Photographe", l: "https://www.onisep.fr/recherche?text=photographe"},
+                    {n: "Game Designer", l: "https://www.onisep.fr/recherche?text=game%20designer"}
+                ]
+            },
+            "S": {
+                n: "Social (L'Allié)", icon: "groups", color: "primary",
+                sf: "<strong>Ce que tu aimes :</strong> Aider, soigner, informer, éduquer, conseiller ou accompagner les personnes en difficulté. Tu préfères travailler en équipe.<br><br><strong>Ton environnement idéal :</strong> Un cadre chaleureux, collaboratif et bienveillant, centré sur le partage et l'entraide.",
+                se: "<strong>Qui es-tu ?</strong> Tu es la personne vers qui l'on se tourne quand ça ne va pas. Pour toi, le contact humain n'est pas un plus, c'est ton moteur principal.<br><br><strong>Tes grandes qualités :</strong> Empathie, patience, sens du contact, tolérance et dévouement.",
+                j: [
+                    {n: "Professeur", l: "https://www.onisep.fr/recherche?text=professeur"},
+                    {n: "Infirmier", l: "https://www.onisep.fr/recherche?text=infirmier"},
+                    {n: "Psychologue", l: "https://www.onisep.fr/recherche?text=psychologue"},
+                    {n: "Orthophoniste", l: "https://www.onisep.fr/recherche?text=orthophoniste"}
+                ]
+            },
+            "E": {
+                n: "Entreprenant (Le Décideur)", icon: "campaign", color: "secondary",
+                sf: "<strong>Ce que tu aimes :</strong> Diriger, organiser des projets, négocier, vendre, prendre des décisions rapides et atteindre des objectifs ambitieux.<br><br><strong>Ton environnement idéal :</strong> Un milieu compétitif, dynamique, où tu peux exercer ton leadership et ta force de persuasion.",
+                se: "<strong>Qui es-tu ?</strong> Tu es un moteur, un leader naturel. Tu n'as pas peur des responsabilités et tu sais convaincre les autres de te suivre.<br><br><strong>Tes grandes qualités :</strong> Audace, confiance en soi, énergie, force de conviction et ambition.",
+                j: [
+                    {n: "Avocat", l: "https://www.onisep.fr/recherche?text=avocat"},
+                    {n: "Chef d'entreprise", l: "https://www.onisep.fr/recherche?text=chef%20d%27entreprise"},
+                    {n: "Agent Immobilier", l: "https://www.onisep.fr/recherche?text=agent%20immobilier"},
+                    {n: "Directeur Marketing", l: "https://www.onisep.fr/recherche?text=directeur%20marketing"}
+                ]
+            },
+            "C": {
+                n: "Conventionnel (L'Organisateur)", icon: "dataset", color: "tertiary",
+                sf: "<strong>Ce que tu aimes :</strong> Trier, calculer, classer des données, suivre des méthodes précises, vérifier que les règles sont respectées et optimiser.<br><br><strong>Ton environnement idéal :</strong> Un espace de travail ordonné, calme, avec des consignes claires et des horaires définis.",
+                se: "<strong>Qui es-tu ?</strong> Tu es la personne qui ramène de l'ordre dans le chaos. Tu aimes quand les choses sont structurées et prévisibles.<br><br><strong>Tes grandes qualités :</strong> Rigueur, fiabilité, sens de l'organisation, précision et souci du détail.",
+                j: [
+                    {n: "Comptable", l: "https://www.onisep.fr/recherche?text=comptable"},
+                    {n: "Logisticien", l: "https://www.onisep.fr/recherche?text=logisticien"},
+                    {n: "Banquier", l: "https://www.onisep.fr/recherche?text=banquier"},
+                    {n: "Secrétaire", l: "https://www.onisep.fr/recherche?text=secr%C3%A9taire"}
+                ]
+            }
+        };
+
+        // ==========================================
+        // LE DICTIONNAIRE DES MÉTIERS HYBRIDES
+        // ==========================================
+        const hybridJobsDict = {
+            "AC": [ "Webdesigner", "Maquettiste", "Architecte d'intérieur", "UX Designer" ],
+            "AE": [ "Directeur artistique", "Galeriste", "Producteur audiovisuel", "Styliste" ],
+            "AI": [ "Créateur de jeux vidéo", "Sound Designer", "Concepteur multimédia", "Animateur 3D" ],
+            "AR": [ "Artisan d'art", "Architecte", "Ébéniste", "Tailleur de pierre" ],
+            "AS": [ "Art-thérapeute", "Professeur d'arts plastiques", "Médiateur culturel", "Musicothérapeute" ],
+            "CE": [ "Expert-comptable", "Chef de rayon", "Responsable administratif", "Gestionnaire de patrimoine" ],
+            "CI": [ "Data Analyst", "Actuaire", "Développeur de bases de données", "Biostatisticien" ],
+            "CR": [ "Logisticien", "Contrôleur qualité", "Magasinier", "Géomètre" ],
+            "CS": [ "Secrétaire médical", "Assistant social", "Assistant RH", "Gestionnaire de paie" ],
+            "EI": [ "Chef de projet informatique", "Ingénieur d'affaires", "Consultant en cybersécurité", "Technico-commercial" ],
+            "ER": [ "Conducteur de travaux", "Entrepreneur dans le bâtiment", "Chef d'exploitation agricole", "Promoteur immobilier" ],
+            "ES": [ "Manager RH", "Proviseur", "Directeur d'hôpital", "Conseiller d'orientation" ],
+            "IR": [ "Ingénieur en mécanique", "Technicien de laboratoire", "Pilote de ligne", "Géologue" ],
+            "IS": [ "Médecin", "Psychologue", "Enseignant-chercheur", "Orthophoniste" ],
+            "RS": [ "Pompier", "Ambulancier", "Éducateur sportif", "Policier" ]
+        };
+
+        let currentIdx = 0;
+        let scores = {R:0, I:0, A:0, S:0, E:0, C:0};
+
+        const apiKeywords = {
+            "R": /mécanique|outil|machine|terrain|nature|agriculture|bâtiment|réparation|sécurité|sport|artisanat|bois|ouvrier|conducteur|technicien/i,
+            "I": /recherche|science|analyse|biologie|données|laboratoire|informatique|math|ingénieur|physique|expert|data/i,
+            "A": /art|design|musique|écriture|image|création|culture|audiovisuel|mode|spectacle|jeu|graph/i,
+            "S": /santé|soin|aide|enseignement|éducation|social|enfant|conseil|psychologie|médical|infirm|professeur/i,
+            "E": /vente|management|droit|commerce|direction|projet|négociation|entreprise|marketing|avocat|commercial/i,
+            "C": /comptabilité|gestion|administration|logistique|banque|organisation|secrétariat|finance|assistant/i
+        };
+
+        async function fetchOpenDataJobs() {
+            try {
+                const response = await fetch('metiers.json');
+                if (!response.ok) throw new Error("Fichier metiers.json introuvable.");
+
+                const data = await response.json();
+                let jobsArray = Array.isArray(data) ? data : (data.results || data.records || []);
+
+                if (jobsArray.length === 0) throw new Error("Le fichier metiers.json est vide.");
+
+                let importedCount = 0;
+                jobsArray.forEach(job => {
+                    let jobName = job.libelle_metier || job.libelle || job.titre;
+                    let jobLink = "https://www.onisep.fr/recherche?text=" + encodeURIComponent(jobName);
+
+                    if (jobName && jobName.length > 3) {
+                        for (let category in apiKeywords) {
+                            if (apiKeywords[category].test(jobName)) {
+                                profiles[category].j.push({ n: jobName, l: jobLink });
+                                importedCount++;
+                                break; 
+                            }
+                        }
+                    }
+                });
+                
+                sourceMetiers = "Base de données Locale ✅";
+                console.log(`✅ SUCCÈS : ${importedCount} métiers importés !`);
+
+            } catch (error) {
+                console.error("❌ ERREUR API :", error.message);
+                sourceMetiers = "Base de secours embarquée (Fichier json manquant)";
+            }
+        }
+
+        function startApp() {
+            document.getElementById('screen-intro').classList.add('hidden');
+            document.getElementById('screen-quiz').classList.remove('hidden');
+            fetchOpenDataJobs();
+            updateQuiz();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateQuiz() {
+            document.getElementById('q-text').innerText = questions[currentIdx].q;
+            document.getElementById('q-count').innerText = `Question ${currentIdx + 1} / 30`;
+            let pct = Math.round((currentIdx / 30) * 100);
+            document.getElementById('q-percent').innerText = `${pct}% Complete`;
+            document.getElementById('progress-bar').style.width = `${pct}%`;
+        }
+
+        function handleAnswer(val) {
+            scores[questions[currentIdx].c] += val;
+            currentIdx++;
+            if (currentIdx < 30) {
+                updateQuiz();
+            } else {
+                showResults();
+            }
+        }
+
+        function getRandomJobs(jobsArray, count = 4) {
+            const shuffled = [...jobsArray].sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, Math.min(count, jobsArray.length));
+        }
+
+        function formatJobName(name) {
+            if (!name) return "";
+            return name.charAt(0).toUpperCase() + name.slice(1);
+        }
+
+        // Helper pour générer la clé alphabétique (ex: R et A devient "AR")
+        function getHybridKey(cat1, cat2) {
+            return [cat1, cat2].sort().join('');
+        }
+
+        function refreshJobs(cat, color) {
+            let p = profiles[cat];
+            let randomJobs = getRandomJobs(p.j, 4);
+            
+            let jobsHTML = randomJobs.map(job => {
+                let cleanName = formatJobName(job.n);
+                return `
+                <a href="${job.l}" target="_blank" class="flex items-center justify-between p-4 md:p-5 bg-white rounded-xl shadow-sm border border-outline-variant/20 group hover:shadow-md hover:border-${color} hover:bg-${color} transition-all duration-300 text-left h-full">
+                    <span class="font-bold font-headline text-sm md:text-[15px] leading-snug text-on-surface group-hover:text-white pr-4">${cleanName}</span>
+                    <div class="w-8 h-8 rounded-full bg-surface-container-low group-hover:bg-white/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                        <span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+                    </div>
+                </a>
+            `}).join('');
+
+            document.getElementById(`jobs-container-${cat}`).innerHTML = jobsHTML;
+        }
+
+        function showResults() {
+            document.getElementById('screen-quiz').classList.add('hidden');
+            document.getElementById('screen-results').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            const sortedCategories = Object.keys(scores).sort((a,b) => scores[b] - scores[a]);
+            const container = document.getElementById('results-container');
+            const hybridContainer = document.getElementById('hybrid-container');
+            container.innerHTML = '';
+            hybridContainer.innerHTML = '';
+            
+            // On récupère les deux meilleurs profils
+            let cat1 = sortedCategories[0];
+            let cat2 = sortedCategories[1];
+
+            for(let i=0; i<2; i++) {
+                let cat = sortedCategories[i];
+                let p = profiles[cat];
+                let pct = Math.round((scores[cat] / 25) * 100); 
+                
+                let randomJobs = getRandomJobs(p.j, 4);
+
+                let jobsHTML = randomJobs.map(job => {
+                    let cleanName = formatJobName(job.n);
+                    return `
+                    <a href="${job.l}" target="_blank" class="flex items-center justify-between p-4 md:p-5 bg-white rounded-xl shadow-sm border border-outline-variant/20 group hover:shadow-md hover:border-${p.color} hover:bg-${p.color} transition-all duration-300 text-left h-full">
+                        <span class="font-bold font-headline text-sm md:text-[15px] leading-snug text-on-surface group-hover:text-white pr-4">${cleanName}</span>
+                        <div class="w-8 h-8 rounded-full bg-surface-container-low group-hover:bg-white/20 flex items-center justify-center flex-shrink-0 transition-colors">
+                            <span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+                        </div>
+                    </a>
+                `}).join('');
+
+                container.innerHTML += `
+                    <div class="relative bg-surface-container rounded-2xl p-8 md:p-10 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-outline-variant/5 flex flex-col h-full">
+                        <div class="absolute -top-12 -right-12 w-48 h-48 bg-${p.color}/10 rounded-full blur-3xl"></div>
+                        
+                        <div class="flex justify-between items-start mb-8 relative z-10">
+                            <div>
+                                <span class="text-${p.color} font-bold text-xs md:text-sm uppercase tracking-widest mb-2 block">Profil n°${i+1}</span>
+                                <h2 class="text-3xl md:text-4xl font-bold font-headline text-on-surface">${p.n.split(' ')[0]}</h2>
+                            </div>
+                            <div class="bg-${p.color} text-white px-4 py-2 md:px-5 md:py-3 rounded-full font-bold shadow-lg flex items-center gap-2 text-sm md:text-base">
+                                <span class="material-symbols-outlined text-base md:text-lg">${p.icon}</span>
+                                ${pct}% match
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-6 relative z-10 mb-8 bg-white/40 p-6 rounded-xl flex-grow">
+                            <div class="text-on-surface-variant leading-relaxed text-sm md:text-base">${p.se}</div>
+                            <hr class="border-outline-variant/20">
+                            <div class="text-on-surface-variant leading-relaxed text-sm md:text-base">${p.sf}</div>
+                        </div>
+
+                        <div class="pt-2 relative z-10">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-2">
+                                <p class="font-bold font-headline text-base md:text-lg flex items-center gap-2">
+                                    <span class="material-symbols-outlined">work</span>
+                                    Découvre les métiers :
+                                </p>
+                                <button onclick="refreshJobs('${cat}', '${p.color}')" class="px-4 py-2 bg-white/60 text-${p.color} text-xs md:text-sm font-bold uppercase tracking-wide hover:bg-white rounded-lg transition-colors flex items-center gap-2 shadow-sm border border-${p.color}/10">
+                                    <span class="material-symbols-outlined text-base">cycle</span> Autres métiers
+                                </button>
+                            </div>
+                            <p class="text-xs text-on-surface-variant italic mb-6">Source : ${sourceMetiers}</p>
+                            
+                            <div id="jobs-container-${cat}" class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+                                ${jobsHTML}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // ==========================================
+            // VÉRIFICATION DE L'ÉGALITÉ POUR LE PROFIL HYBRIDE
+            // ==========================================
+            if (scores[cat1] === scores[cat2] && scores[cat1] > 0) {
+                let hybridKey = getHybridKey(cat1, cat2);
+                let hJobs = hybridJobsDict[hybridKey] || [];
+                
+                if (hJobs.length > 0) {
+                    let hybridJobsHTML = hJobs.map(job => {
+                        let hLink = "https://www.onisep.fr/recherche?text=" + encodeURIComponent(job);
+                        return `
+                        <a href="${hLink}" target="_blank" class="flex items-center justify-between p-4 md:p-5 bg-white rounded-xl shadow-sm border border-outline-variant/20 group hover:shadow-md hover:border-primary-container hover:bg-primary-container transition-all duration-300 text-left h-full">
+                            <span class="font-bold font-headline text-sm md:text-[15px] leading-snug text-on-surface group-hover:text-white pr-4">${job}</span>
+                            <div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center flex-shrink-0 transition-colors group-hover:bg-white/20">
+                                <span class="material-symbols-outlined text-sm text-on-surface-variant group-hover:text-white group-hover:translate-x-0.5 transition-all">arrow_forward</span>
+                            </div>
+                        </a>
+                    `}).join('');
+
+                    hybridContainer.innerHTML = `
+                        <div class="w-full bg-gradient-to-br from-primary-container/30 to-secondary-container/30 rounded-2xl p-8 md:p-12 border border-primary/20 shadow-md">
+                            <div class="flex items-center gap-3 mb-4">
+                                <span class="material-symbols-outlined text-3xl text-primary">all_inclusive</span>
+                                <h3 class="text-2xl md:text-3xl font-bold font-headline text-on-surface">Égalité parfaite : Ton Profil Hybride !</h3>
+                            </div>
+                            <p class="mb-8 text-on-surface-variant text-base md:text-lg leading-relaxed">
+                                Tu as obtenu exactement le même score pour <strong>${profiles[cat1].n.split(' ')[0]}</strong> et <strong>${profiles[cat2].n.split(' ')[0]}</strong>.<br>
+                                C'est une excellente nouvelle ! Voici des idées de métiers très originaux qui mélangent le meilleur de ces deux mondes :
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
+                                ${hybridJobsHTML}
+                            </div>
+                        </div>
+                    `;
+                    hybridContainer.classList.remove('hidden');
+                }
+            }
+        }
+    </script>
+</body>
+</html>
